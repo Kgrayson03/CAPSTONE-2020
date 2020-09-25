@@ -1,0 +1,19 @@
+from google.colab import files 
+#uploaded = files.upload()
+%matplotlib inline
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import io
+df = pd.read_csv(io.BytesIO(uploaded['Trial.csv'])) 
+Circulatory =df[((df['diag_1'] >= '390')& (df['diag_1'] <= '460')) | (df['diag_1'] == '785')]
+Circulatory
+#Circulatory['diag_1'].head()
+Respitory =df[((df['diag_1'] >= '460')& (df['diag_1'] <= '519')) | (df['diag_1'] == '786')]
+Respitory
+Diabetes= df[(df['diag_1'] >= '249')& (df['diag_1'] <= '251')]
+Diabetes
+Digestive = df[((df['diag_1'] >= '520')& (df['diag_1'] <= '579')) | (df['diag_1'] == '787')]
+Injury=df[(df['diag_1'] >= '800')& (df['diag_1'] <= '999')]
+Injury
